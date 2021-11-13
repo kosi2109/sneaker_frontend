@@ -1,0 +1,56 @@
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 20px 0;
+}
+
+.logo{
+    letter-spacing: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+.logo a{
+    color: #252525;
+    text-decoration: none;
+}
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.back h5{
+    margin: 0;
+    margin-left: 20px;
+}
+
+.bag{
+    width: 40px;
+    cursor: pointer;
+}
+
+.cartCount{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #252525;
+    top: -20%;
+    right: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.cartCount h6{
+    margin: 0;
+    color: #fafafa;
+}

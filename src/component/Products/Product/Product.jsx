@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -13,6 +13,7 @@ export default function Product({ product }) {
   const addCart = ()=>{
     const cartData = {
       name:product.name,
+      image: product.featureImage,
       size:product.option[color].stock[size].size.size,
       color:product.option[color].color.color,
       price:product.option[color].stock[size].price,
@@ -21,7 +22,7 @@ export default function Product({ product }) {
     dispatch(addToCart(cartData))
   }
   
-  
+
   const stockCheck = (s,index)=>{
     if (index==size){
       return (
@@ -41,6 +42,7 @@ export default function Product({ product }) {
     }
     
   }
+  if (!product.option) return "loading"
   return (
     <div className="row item-container">
       <div className="col-lg-1"></div>

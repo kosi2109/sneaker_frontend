@@ -32,7 +32,7 @@ export const getProducts = () => async (dispatch) => {
     try {
       dispatch({ type: START_LOADING });
       const { data } = await api.fetchFeatureProducts();
-      console.log('from api',data)
+      
       dispatch({ type: FETCH_FEATURE_PRODUCT, payload: {products : data}  });
       dispatch({ type: END_LOADING });
     } catch (error) {

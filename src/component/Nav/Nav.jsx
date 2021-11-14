@@ -1,12 +1,27 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link , useNavigate } from "react-router-dom";
+import { getFromCart } from "../../actions/order";
 import Back from "./back.png"
 import Bag from "./bag.png"
 import "./style.css"
+
 export default function Nav({back}) {
-  const items = useSelector((state)=> state.orderItems)
-  const count = items.reduce((a,b)=> a.quantity + b.quantity )
+  const dispatch = useDispatch()
+  
+  useEffect(()=>{
+    dispatch(getFromCart())
+  },[dispatch])
+  
+  var  items = useSelector((state)=> state.orderItems)
+  console.log(items)
+  if (items != null && items.length > 0){
+    items = items.map(i=> i.quantity)
+    var count = items.reduce((a,b)=> a + b )
+  }
+  
+
+
   const history = useNavigate()
 
   return (
@@ -16,13 +31,12 @@ export default function Nav({back}) {
         <img src={Back} alt="" />
         <h5>Back</h5>
       </div> : "" }
-      <Link to="/">
+      <Link to="/cart">
         <div style={{position:"relative",height:"100%",width:"40px"}}>
           <img className="bag" src={Bag} alt="" />
           <div className="cartCount">
-          <h6 >{count}</h6>
+          <h6>{count ? count : 0}</h6>
           </div>
-          
         </div>
       </Link>
       

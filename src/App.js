@@ -3,6 +3,7 @@ import Products from './component/Products/Products';
 import Brands from "./component/Brands/Brands"
 import { BrowserRouter as Router ,Routes , Route } from "react-router-dom"
 import Home from './component/Home/Home';
+import Cart from './component/Cart/Cart';
 
 
 
@@ -13,6 +14,7 @@ function App() {
       <Route path='/' element={<Home />}></Route>
       <Route path='/brand/:brand' element={<Products />}></Route>
       <Route path='/brand' element={<Brands />}></Route>
+      <Route path='/cart' element={<Cart />}></Route>
       </Routes>
     </Router>
     

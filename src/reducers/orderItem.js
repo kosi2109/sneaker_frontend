@@ -1,12 +1,12 @@
-import { ADD_TO_CART } from "../constants/actionType"
-var items = []
-items = JSON.parse(localStorage.getItem("orderItems"))
-export default (orderItems=items ,action)=>{
+import { ADD_TO_CART , GET_FROM_CART } from "../constants/actionType"
+
+
+export default (orderItems=[] ,action)=>{
     switch (action.type){
         case ADD_TO_CART:
-            
+            orderItems = JSON.parse(localStorage.getItem("orderItems"))
             function isExist(item){
-                return action.payload.name == item.name
+                return (action.payload.name == item.name && item.color == action.payload.color && item.size == action.payload.size )
             }
             
             if (orderItems != null){
@@ -15,14 +15,20 @@ export default (orderItems=items ,action)=>{
                     item.quantity += 1
                     orderItems = [...orderItems]
                 }else{
-                    orderItems.push(action.payload)
+                    orderItems = [...orderItems,action.payload]
                 }
                 
             }else{
                 orderItems = [action.payload]
             }
             
+            
             localStorage.setItem("orderItems",JSON.stringify(orderItems))
+            
+            return orderItems
+        
+        case GET_FROM_CART:
+            orderItems = action.payload
             
             return orderItems
 

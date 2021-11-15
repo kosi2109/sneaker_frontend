@@ -14,7 +14,7 @@ export default function Nav({back}) {
   },[dispatch])
   
   var  items = useSelector((state)=> state.orderItems)
-  console.log(items)
+
   if (items != null && items.length > 0){
     items = items.map(i=> i.quantity)
     var count = items.reduce((a,b)=> a + b )

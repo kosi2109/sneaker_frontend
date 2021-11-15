@@ -17,7 +17,9 @@ export default function Product({ product }) {
       size:product.option[color].stock[size].size.size,
       color:product.option[color].color.color,
       price:product.option[color].stock[size].price,
-      quantity: 1
+      quantity: 1,
+      color_value:color,
+      size_value: size
     } 
     dispatch(addToCart(cartData))
   }

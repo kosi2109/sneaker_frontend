@@ -19,7 +19,6 @@ export const getProducts = () => async (dispatch) => {
     try {
       dispatch({ type: START_LOADING });
       const { data } = await api.fetchProductsByBrand(brand);
-  
       dispatch({ type: FETCH_ALL_PRODUCTS, payload: {products : data}  });
       dispatch({ type: END_LOADING });
     } catch (error) {

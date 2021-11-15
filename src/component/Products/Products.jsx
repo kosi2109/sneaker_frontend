@@ -5,13 +5,11 @@ import Product from './Product/Product';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from 'react-router';
-import { getBrands } from '../../actions/brands';
 import Nav from "../Nav/Nav"
 
 
 
 export default function Products() {
-    const back = true
     const { brand } = useParams()
     
     const dispatch = useDispatch()
@@ -25,7 +23,7 @@ export default function Products() {
     return (
         isLoading ? <h1>Loading</h1> :(
             <>
-                <Nav back={back}/>
+                <Nav back={true}/>
                 <div className="container-fluid">
                     
                     <Carousel showStatus={false} showIndicators={false} className="item-container mt-5" >

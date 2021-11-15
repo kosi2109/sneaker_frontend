@@ -17,6 +17,8 @@ export const FETCH_ALL_SIZE = "FETCH_ALL_SIZE"
 // order
 export const ADD_TO_CART = "ADD_TO_CART"
 export const GET_FROM_CART = "GET_FROM_CART"
+export const UPDATE_CART = "UPDATE_CART"
+export const CREATE_ORDER = "CREATE_ORDER"
 
 export const START_LOADING = "START_LOADING"
 export const END_LOADING = "END_LOADING"

@@ -6,7 +6,7 @@ import Back from "./back.png"
 import Bag from "./bag.png"
 import "./style.css"
 
-export default function Nav({back}) {
+export default function Nav({back,uri}) {
   const dispatch = useDispatch()
   
   useEffect(()=>{
@@ -21,13 +21,13 @@ export default function Nav({back}) {
   }
   
 
-
+  console.log(uri)
   const history = useNavigate()
 
   return (
     <div className="nav px-5">
       <h2 className="logo"> <Link to="/">kalli</Link> </h2>
-      {back ? <div className="back" onClick={()=>history('/brand',{ replace: true })}>
+      {back ? <div className="back" onClick={()=>history(`/${uri}`,{ replace: true })}>
         <img src={Back} alt="" />
         <h5>Back</h5>
       </div> : "" }

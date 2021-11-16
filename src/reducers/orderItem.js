@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   GET_FROM_CART,
   UPDATE_CART,
+  CLEAR_CART
 } from "../constants/actionType";
 
 export default (orderItems = [], action) => {
@@ -34,7 +35,7 @@ export default (orderItems = [], action) => {
 
     case GET_FROM_CART:
       orderItems = action.payload;
-
+      
       return orderItems;
     case UPDATE_CART:
       const { index, type } = action.payload;
@@ -53,6 +54,11 @@ export default (orderItems = [], action) => {
 
       localStorage.setItem("orderItems", JSON.stringify(orderItems));
       return orderItems;
+
+      case CLEAR_CART:
+        orderItems = []
+        localStorage.setItem("orderItems", JSON.stringify(orderItems));
+        return orderItems;
 
     default:
       return orderItems;

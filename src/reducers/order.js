@@ -11,7 +11,6 @@ export default (state = { orders: [], isLoading: true }, action) => {
     case END_LOADING:
       return { ...state, isLoading: false };
     case CREATE_ORDER:
-      console.log("fromred",action.payload);
       return { ...state, orders: [...state.orders, action.payload] };
     default:
       return state;

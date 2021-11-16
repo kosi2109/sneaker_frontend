@@ -23,7 +23,7 @@ export default function Products() {
     return (
         isLoading ? <h1>Loading</h1> :(
             <>
-                <Nav back={true}/>
+                <Nav back={true} uri={"brand"}/>
                 <div className="container-fluid">
                     
                     <Carousel showStatus={false} showIndicators={false} className="item-container mt-5" >

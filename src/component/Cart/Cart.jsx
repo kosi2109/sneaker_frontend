@@ -3,38 +3,26 @@ import { useDispatch, useSelector } from 'react-redux'
 import Nav from '../Nav/Nav'
 import CartItems from './CartItems/CartItems'
 import "./style.css"
-import {createOrder} from "../../actions/order"
+
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
-    const dispatch = useDispatch()
+    
     var items = useSelector((state)=> state.orderItems)
-    const subTotal = items.map((item)=> item.quantity * item.price)
     
-    
-    if (subTotal.length > 0){
-        var total = parseInt(subTotal.reduce((a,b)=> a+b))
-        var tax = total * 0.05
-        var gtotal = parseInt(total) + tax
-    }
     if (items.length < 1 ) return (<>
-        <Nav back={true} />
+        <Nav back={true} uri={'brand'} />
         <h1>No Items</h1>
     </>)
-    console.log(JSON.stringify(items))
-    function comfirmOrder(){
-        const data = {
-            name : "KOsi",
-            address : "ssss",
-            phone: "0988888",
-            email : "@@@",
-            order_items : JSON.stringify(items)
-        }
-        dispatch(createOrder(data))
-        
-    }
+
+    var subTotal = items.map((item)=> item.quantity * item.price)
+    var total = parseInt(subTotal.reduce((a,b)=> a+b))
+    var tax = total * 0.05
+    var gtotal = parseInt(total) + tax
+    
     return (
         <>
-        <Nav back={true} />
+        <Nav back={true} uri={'brand'} />
         <div className="container mt-3">
             <div className="row">
                 <div className="col-lg-1"></div>
@@ -62,7 +50,11 @@ export default function Cart() {
                                 <h5>$ {gtotal}</h5>
                             </div>
                         </div>
-                        <button onClick={()=> comfirmOrder()} className="checkout">Check Out</button>
+                        <Link to="/checkout">
+                            <button className="checkout" >Checkout</button>
+                        </Link>
+                        
+                        
                     </div>
                 </div>
             </div>

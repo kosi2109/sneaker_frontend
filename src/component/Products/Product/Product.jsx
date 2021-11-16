@@ -12,6 +12,7 @@ export default function Product({ product }) {
   
   const addCart = ()=>{
     const cartData = {
+      p_id : product._id,
       name:product.name,
       image: product.featureImage,
       size:product.option[color].stock[size].size.size,

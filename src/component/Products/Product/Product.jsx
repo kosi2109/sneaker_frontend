@@ -10,6 +10,8 @@ export default function Product({ product }) {
   const [size, setSize] = useState(0)
   const dispatch = useDispatch()
   
+  if (!product.option) return "loading"
+
   const addCart = ()=>{
     const cartData = {
       p_id : product._id,
@@ -25,19 +27,15 @@ export default function Product({ product }) {
     dispatch(addToCart(cartData))
   }
   
-
-  const stockCheck = (s,index)=>{
+  
+  const activeSelect = (s,index)=>{
     if (index==size){
       return (
         <div className="sizeIcon active" onClick={()=> setSize(index)}>
         <h6>{s.size.size}</h6>
         </div>)
-    }else if (product.option[color].stock[size].stock < 1){
-      return (
-        <div className="sizeIcon outStock" disabled={true} onClick={()=> setSize(size)}>
-        <h6>{s.size.size}</h6>
-      </div>)
-    }else{
+    }
+    else{
       return (
         <div className="sizeIcon" onClick={()=> setSize(index)}>
         <h6>{s.size.size}</h6>
@@ -45,7 +43,16 @@ export default function Product({ product }) {
     }
     
   }
-  if (!product.option) return "loading"
+
+  const checkStock = ()=>{
+    if (product.option[color].stock[size].stock == 0){
+      console.log("out")
+      return false
+    }
+    console.log("shi")
+    return true
+  }
+  
   return (
     <div className="row item-container">
       <div className="col-lg-1"></div>
@@ -69,7 +76,7 @@ export default function Product({ product }) {
         <div className="sizeContainer">
         {product.option[color].stock.map((s,index)=>(
           
-          stockCheck(s,index)
+          activeSelect(s,index)
           
         ))}
         </div>
@@ -88,8 +95,12 @@ export default function Product({ product }) {
           ))}
           </div>
         </div>
-        <button className="addCart" onClick={()=> addCart()} >
+        {checkStock() ?
+          <button className="addCart" onClick={()=> addCart()} >
           ADD TO CART</button>
+        : <button className="addCart" disabled >
+        Out Of Stock</button> }
+        
         
       </div>
       <div className="col-lg-1"></div>

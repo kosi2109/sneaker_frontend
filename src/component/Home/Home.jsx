@@ -26,9 +26,15 @@ export default function Home() {
               <h3>
                 What <br /> Are You <br /> Looking For
               </h3>
-              <Link to="/brand">
+              <div>
+              <Link to="/brand" className="me-3">
                 <button>Shop Now</button>
               </Link>
+              <Link to="/auth" >
+                <button className="loginBtn">Login</button>
+              </Link>
+              </div>
+              
             </div>
           </div>
           <div className="col-lg-8">

@@ -5,6 +5,7 @@ import { BrowserRouter as Router ,Routes , Route } from "react-router-dom"
 import Home from './component/Home/Home';
 import Cart from './component/Cart/Cart';
 import Checkout from './component/Checkout/Checkout';
+import Auth from './component/Auth/Auth';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/brand' element={<Brands />}></Route>
       <Route path='/cart' element={<Cart />}></Route>
       <Route path='/checkout' element={<Checkout />}></Route>
+      <Route path='/auth' element={<Auth />}></Route>
       </Routes>
     </Router>
     

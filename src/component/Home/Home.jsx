@@ -5,6 +5,7 @@ import { getFeatureProducts } from "../../actions/products";
 import Nav from "../Nav/Nav";
 import { Carousel } from "react-responsive-carousel";
 import "./style.css";
+import Loading from "../Loading/Loading";
 export default function Home() {
   const back = false;
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function Home() {
   const {products,isLoading} = useSelector((state) => state.products);
   
   return (
-    isLoading ? <h1>Loading</h1> :(
+    isLoading ? <Loading/> :(
     <>
       <Nav back={back} />
       <div className="container-fluid px-5">

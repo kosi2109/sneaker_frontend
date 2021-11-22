@@ -11,9 +11,9 @@ export default (orderItems = [], action) => {
       orderItems = JSON.parse(localStorage.getItem("orderItems"));
       function isExist(item) {
         return (
-          action.payload.name == item.name &&
-          item.color == action.payload.color &&
-          item.size == action.payload.size
+          action.payload.name === item.name &&
+          item.color === action.payload.color &&
+          item.size === action.payload.size
         );
       }
 
@@ -41,9 +41,9 @@ export default (orderItems = [], action) => {
       const { index, type } = action.payload;
       orderItems = JSON.parse(localStorage.getItem("orderItems"));
 
-      if (type == "add") {
+      if (type === "add") {
         orderItems[index].quantity += 1;
-      } else if (type == "reduce") {
+      } else if (type === "reduce") {
         orderItems[index].quantity -= 1;
         if (orderItems[index].quantity < 1){
             orderItems.splice(orderItems[index],1)

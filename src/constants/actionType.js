@@ -31,6 +31,11 @@ export const AUTH = "AUTH"
 
 
 
+// error
+export const ERROR = "ERROR"
+
+
+
 
 
 

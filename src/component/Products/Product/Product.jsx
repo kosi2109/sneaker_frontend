@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -29,7 +29,7 @@ export default function Product({ product }) {
   
   
   const activeSelect = (s,index)=>{
-    if (index==size){
+    if (index===size){
       return (
         <div className="sizeIcon active" onClick={()=> setSize(index)}>
         <h6>{s.size.size}</h6>
@@ -45,11 +45,9 @@ export default function Product({ product }) {
   }
 
   const checkStock = ()=>{
-    if (product.option[color].stock[size].stock == 0){
-      console.log("out")
+    if (product.option[color].stock[size].stock === 0){
       return false
     }
-    console.log("shi")
     return true
   }
   

@@ -1,0 +1,42 @@
+.formContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+.authForm{
+    width: 20em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #fafafa;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px #252525;
+}
+
+.authForm input,.login{
+    width: 100%;
+    height: 2em;
+    border: 1px solid black;
+    background-color: #fafafa;
+    border-radius: 5px;
+}
+
+.loginSug{
+    border-top: 1px dotted #252525;
+}
+
+.loginCon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px ;
+    border-top: 1px solid black;
+    flex-direction: column;
+}

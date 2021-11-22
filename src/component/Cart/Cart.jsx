@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import Nav from '../Nav/Nav'
 import CartItems from './CartItems/CartItems'
 import "./style.css"

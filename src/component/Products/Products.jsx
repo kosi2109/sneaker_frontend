@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {getProducts,getProductsByBrand} from "../../actions/products"
+import {getProductsByBrand} from "../../actions/products"
 import Product from './Product/Product';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useParams } from 'react-router';
 import Nav from "../Nav/Nav"
+import Loading from '../Loading/Loading';
 
 
 
@@ -21,19 +22,21 @@ export default function Products() {
     const {products,isLoading} = useSelector((state)=> state.products)
     
     return (
-        isLoading ? <h1>Loading</h1> :(
+        
             <>
                 <Nav back={true} uri={"brand"}/>
+                 
                 <div className="container-fluid">
-                    
+                {isLoading ? <Loading/> :
                     <Carousel showStatus={false} showIndicators={false} className="item-container mt-5" >
                 {products.map((product)=>(
                     <Product product={product} />
                 ))}
-                </Carousel>
+                </Carousel>}
                 </div>
+                
             </>
-        )
+        
         
     )
 }

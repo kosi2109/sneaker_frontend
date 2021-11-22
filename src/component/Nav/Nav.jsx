@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link , useNavigate } from "react-router-dom";
 import { getFromCart } from "../../actions/order";
@@ -20,8 +20,6 @@ export default function Nav({back,uri}) {
     var count = items.reduce((a,b)=> a + b )
   }
   
-
-  console.log(uri)
   const history = useNavigate()
 
   return (

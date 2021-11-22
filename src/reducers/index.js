@@ -7,6 +7,7 @@ import sizes from "./sizes";
 import orderItems from "./orderItem";
 import orders from "./order";
 import auth from "./auth";
+import error from "./error"
 
 export const reducers = combineReducers({
   products,
@@ -15,5 +16,6 @@ export const reducers = combineReducers({
   sizes,
   orderItems,
   orders,
-  auth
+  auth,
+  error
 });

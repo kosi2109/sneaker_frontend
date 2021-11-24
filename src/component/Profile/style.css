@@ -1,0 +1,20 @@
+.pfIcon{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    box-shadow: 0.5px 0.5px 5px #252525;
+    background-color: #fafafa;
+    z-index: 100;
+    border: 2px solid #252525;
+}
+
+.pfIcon img{
+    width: 85%;
+    height: 85%;
+}

@@ -28,7 +28,7 @@ export const END_LOADING = "END_LOADING"
 
 // auth
 export const AUTH = "AUTH"
-
+export const GET_USER_DATA = "GET_USER_DATA"
 
 
 // error

@@ -19,7 +19,7 @@
     box-shadow: 2px 2px 5px #252525;
 }
 
-.authForm input,.login{
+.authForm input,.login,.authForm textarea{
     width: 100%;
     height: 2em;
     border: 1px solid black;

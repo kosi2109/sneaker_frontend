@@ -5,6 +5,7 @@ import CartItems from './CartItems/CartItems'
 import "./style.css"
 
 import { Link } from 'react-router-dom'
+import EmptyCart from './EmptyCart/EmptyCart'
 
 export default function Cart() {
     
@@ -12,7 +13,7 @@ export default function Cart() {
     
     if (items.length < 1 ) return (<>
         <Nav back={true} uri={'brand'} />
-        <h1>No Items</h1>
+        <EmptyCart/>
     </>)
 
     var subTotal = items.map((item)=> item.quantity * item.price)

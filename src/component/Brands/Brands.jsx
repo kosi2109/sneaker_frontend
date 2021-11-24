@@ -13,7 +13,7 @@ export default function Brands() {
   }, [dispatch]);
 
   const { brands, isLoading } = useSelector((state) => state.brands);
-  console.log(brands);
+
   return (
     <>
       <Nav back={back} />
@@ -23,7 +23,7 @@ export default function Brands() {
         <div className="container pt-5">
           <div className="row">
             {brands.map((brand) => (
-              <div className="col-lg-3">
+              <div className="col-lg-3 mb-3">
                 <Link to={`/brand/${brand.brand}`}>
                   <div className="brContainer">
                     <img src={brand.icon} alt="" />

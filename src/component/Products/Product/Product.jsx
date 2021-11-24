@@ -52,7 +52,7 @@ export default function Product({ product }) {
   }
   
   return (
-    <div className="row item-container">
+    <div className="row item-container p-2">
       <div className="col-lg-1"></div>
       <div className="col-lg-3">
         <h2 className="text-start mb-4">{product.brand.brand}</h2>

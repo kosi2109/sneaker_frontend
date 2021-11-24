@@ -1,0 +1,23 @@
+.ecContainer{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ecContainer div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ecContainer div img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}

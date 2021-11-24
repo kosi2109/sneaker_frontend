@@ -4,17 +4,26 @@ import Nav from '../Nav/Nav'
 import {createOrder} from "../../actions/order"
 import "./style.css"
 import {Link} from "react-router-dom"
+import { getUserData } from '../../actions/auth'
 
 export default function Checkout() {
     const dispatch = useDispatch()
-    const profile = JSON.parse(localStorage.getItem("profile"))
+    var {user_id} = JSON.parse(localStorage.getItem("profile"))
+    useEffect(()=>{
+        dispatch(getUserData(user_id))
+    },[dispatch])
+    
+    const profile = useSelector((state)=> state.auth.authData)
+    
     if(profile){
         var initialForm = {
-            name : "",
-            address : "",
-            phone : "",
+            userId: profile._id,
+            name : profile.fullName,
+            address : profile.address,
+            phone : profile.phone,
             email: profile.email
         }
+        
     }else{
         var initialForm = {
             name : "",
@@ -24,9 +33,8 @@ export default function Checkout() {
         }
     }
     var items = useSelector((state)=> state.orderItems)
-    
+    var order = useSelector(state => state.orders)
     const [form,setForm] = useState(initialForm)
-
     const handleChange = (e)=>{
         setForm({...form,[e.target.name]:e.target.value})
     }
@@ -35,6 +43,7 @@ export default function Checkout() {
     function comfirmOrder(){
         const data = {
             name : form.name,
+            userId: form.userId,
             address : form.address,
             phone: form.phone,
             email : form.email,
@@ -50,7 +59,10 @@ export default function Checkout() {
             }))
         }
         dispatch(createOrder(data))
-        
+        const login = document.querySelector(".login")
+        if (order.isLoading){
+            login.innerHTML = `Sending`
+        }
     }
 
     const handleSubmit = (e)=>{
@@ -72,9 +84,16 @@ export default function Checkout() {
                 <input required type="text" name="phone" value={form.phone} onChange={handleChange} />
                 <label className="mb-2"> Email </label>
                 <input required type="email" name="email" value={form.email} onChange={handleChange} />
-                <button type="submit" className="mt-3 mb-3 login">
+                {!items.length < 1 ?
+                    <button type="submit" className="mt-3 mb-3 login">
                     Comfirm Order
-                </button>
+                    </button>
+                : 
+                    <button type="submit" className="mt-3 mb-3 login" disabled>
+                    No Item
+                    </button>
+                }
+                
                 {!profile ? 
                     <div className="loginCon">
                     <p style={{width:"100%"}}>Please login to save your informations and order histories . </p>

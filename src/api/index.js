@@ -37,3 +37,4 @@ export const createOrder = (data) => API.post('/orders',data)
 // auth 
 export const login = (formData) => API.post('/users/login',formData)
 export const signup = (formData) => API.post('/users/signup',formData)
+export const userData = (id) => API.get(`/users/${id}`)

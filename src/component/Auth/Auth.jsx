@@ -10,11 +10,12 @@ export default function Auth() {
     const dispatch = useDispatch()
     const history = useNavigate()
     const [form , setForm ] = useState({
-        firstName : "",
-        lastName : "",
+        fullName : "",
+        phone : "",
         email: "",
         password : "",
         password2: "",
+        address: "",
         isSignup : false
     })
     const err = useSelector((state)=>  state.error)
@@ -26,7 +27,7 @@ export default function Auth() {
     
     const handleSubmit = (e)=>{
         e.preventDefault()
-        if (form.password !==  form.password2){
+        if ( form.isSignup && form.password !==  form.password2){
             document.querySelector(".errMessage").innerHTML = `<p>Password doesn't match</p>`
              
         }else{
@@ -47,10 +48,10 @@ export default function Auth() {
             <h3>{form.isSignup ? "Signup" : "Login"}</h3>
             {form.isSignup ? 
             <>  
-                <label>First Name</label>
-                <input required type="text" name="firstName" value={form.firstName} onChange={handleChange} />
-                <label>Last Name</label>
-                <input required type="text" name="lastName" value={form.lastName} onChange={handleChange} />
+                <label>FullName</label>
+                <input required type="text" name="fullName" value={form.fullName} onChange={handleChange} />
+                <label>Phone</label>
+                <input required type="text" name="phone" value={form.phone} onChange={handleChange} />
             </>: ""}
             <label>Email</label>
             <input required type="text" name="email" value={form.email} onChange={handleChange} />
@@ -60,6 +61,8 @@ export default function Auth() {
             <>  
                <label>Comfirm Password</label>
                 <input required type="password" name="password2" value={form.password2} onChange={handleChange} />
+                <label>Address</label>
+                <textarea name="address" cols="30" rows="10" value={form.address} onChange={handleChange} ></textarea>
             </>: ""}
             <div className="errMessage mt-2 text-danger">
 

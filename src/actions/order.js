@@ -1,4 +1,4 @@
-import {ADD_TO_CART ,GET_FROM_CART,UPDATE_CART , CREATE_ORDER, CLEAR_CART} from "../constants/actionType"
+import {ADD_TO_CART ,GET_FROM_CART,UPDATE_CART , CREATE_ORDER, CLEAR_CART, END_LOADING, START_LOADING} from "../constants/actionType"
 import * as api from '../api/index';
 
 
@@ -20,11 +20,13 @@ export const updateCart = (data)=> (dispatch)=>{
 
 export const createOrder = (order)=> async (dispatch)=>{
     try {
-        
+        dispatch({ type: START_LOADING })
         const { data } = await api.createOrder(order);
         
         dispatch({ type: CREATE_ORDER, payload:data });
         dispatch({ type: CLEAR_CART });
+        dispatch({ type: END_LOADING })
+        
       } catch (error) {
         console.log(error.message);
       }

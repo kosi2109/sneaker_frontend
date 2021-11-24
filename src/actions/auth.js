@@ -1,12 +1,12 @@
-import {AUTH, ERROR} from "../constants/actionType"
+import {AUTH, ERROR,GET_USER_DATA} from "../constants/actionType"
 import * as api from "../api/index"
 
 export const auth = (formData,history) => async (dispatch)=>{
     
     try {
         if (formData.isSignup){
-            const {data} = await api.signup(formData)
-            
+            await api.signup(formData)
+            const {data} = await api.login(formData)
             
             if(!data.error){
                 history(`/`,{ replace: true })
@@ -29,5 +29,16 @@ export const auth = (formData,history) => async (dispatch)=>{
         
     } catch (error) {
         console.log(error)
+    }
+}
+
+export const getUserData = (id)=> async (dispatch)=>{
+    try {
+        if (id != null){
+            const {data} = await api.userData(id)
+            dispatch({type:GET_USER_DATA,payload:{data}})
+        }
+    } catch (error) {
+        console.log(error.message)
     }
 }

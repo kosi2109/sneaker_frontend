@@ -17,8 +17,8 @@
 }
 
 .cartImg img{
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 100%;
 }
 
 .detailContainer{

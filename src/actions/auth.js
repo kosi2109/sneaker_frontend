@@ -1,4 +1,4 @@
-import {AUTH, ERROR,GET_USER_DATA} from "../constants/actionType"
+import {AUTH, ERROR,GET_USER_DATA, LOGOUT} from "../constants/actionType"
 import * as api from "../api/index"
 
 export const auth = (formData,history) => async (dispatch)=>{
@@ -41,4 +41,14 @@ export const getUserData = (id)=> async (dispatch)=>{
     } catch (error) {
         console.log(error.message)
     }
+}
+
+export const logout = (history) => async (dispatch)=>{
+    try {
+        dispatch({type:LOGOUT})
+        history(`/`,{ replace: true })
+    } catch (error) {
+        console.log(error.message)
+    }
+
 }

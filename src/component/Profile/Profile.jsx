@@ -1,26 +1,60 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserData } from '../../actions/auth'
+import { getUserData, logout } from '../../actions/auth'
+import { getOrders } from '../../actions/order'
 import Nav from '../Nav/Nav'
+import {Link} from "react-router-dom"
+import moment from "moment"
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Profile() {
     const dispatch = useDispatch()
+    const history = useNavigate()
     var {user_id} = JSON.parse(localStorage.getItem("profile"))
+
     useEffect(()=>{
         dispatch(getUserData(user_id))
     },[dispatch])
     
+    useEffect(()=>{
+        dispatch(getOrders(user_id))
+    },[dispatch])
     const profile = useSelector((state)=> state.auth.authData)
-    
+    const orders = useSelector(state => state.orders.orders)
+  
     return (
         <>
             <Nav back={false}/>
             {profile != null ? <div className="container">
-                <div className="col-lg-3">
-                    <h1>{profile.fullName}</h1>
-                </div>
-                <div className="col-lg-9">
+                <div className="row">
 
+                
+                <div className="col-lg-4">
+                    <div className="profileContainer">
+                        <h3>{profile.fullName}</h3>
+                        <h4>{profile.phone}</h4>
+                        <h4>{profile.email}</h4>
+                        <h4>{profile.address}</h4>
+                    </div>
+                    <button onClick={()=> dispatch(logout(history))}>Logout</button>
+                </div>
+                <div className="col-lg-8">
+                    <div>
+                    {orders.map((order,i)=>(
+                        <Link to="/" key={i} style={{textDecoration:"none"}}>
+                            <div className="orderContainer">
+                                <h4>Order ID {order.order_id}</h4>
+                                <div>
+                                    <h5></h5>
+                                </div>
+                                <h5>{moment(order.order_date).format("MMM Do YY")}</h5>
+                            </div>
+                        </Link> 
+                    ))}
+                    </div>
+                    
+                </div>
                 </div>
             </div> : ""}
             

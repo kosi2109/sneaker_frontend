@@ -29,8 +29,8 @@ export default function Products() {
                 <div className="container-fluid">
                 {isLoading ? <Loading/> :
                     <Carousel showStatus={false} showIndicators={false} className="item-container mt-5" >
-                {products.map((product)=>(
-                    <Product product={product} />
+                {products.map((product,i)=>(
+                    <Product product={product} key={i} />
                 ))}
                 </Carousel>}
                 </div>

@@ -32,9 +32,11 @@ export const fetchSizes = () => API.get('/sizes')
 
 // order
 export const createOrder = (data) => API.post('/orders',data)
+export const getOrders = (userId) => API.get(`/orders/${userId}`)
+export const getOrder = (data) => API.get(`/orders/${data.userId}/${data.orderId}`)
 
-
-// auth 
+// auth  
 export const login = (formData) => API.post('/users/login',formData)
+export const logout = (id) => API.post('/users/logout',id)
 export const signup = (formData) => API.post('/users/signup',formData)
 export const userData = (id) => API.get(`/users/${id}`)

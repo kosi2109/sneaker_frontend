@@ -29,7 +29,7 @@ export default function Cart() {
                 <div className="col-lg-1"></div>
                 <div className="col-lg-8">
                 {items.map((item,index)=>(
-                    <CartItems item={item} index={index} />
+                    <CartItems item={item} index={index} key={index}  />
                 ))}
                 </div>
                 <div className="col-lg-3">

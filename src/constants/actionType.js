@@ -20,6 +20,8 @@ export const GET_FROM_CART = "GET_FROM_CART"
 export const UPDATE_CART = "UPDATE_CART"
 export const CREATE_ORDER = "CREATE_ORDER"
 export const CLEAR_CART = "CLEAR_CART"
+export const GET_ORDERS = "GET_ORDERS"
+export const GET_ORDER = "GET_ORDER"
 
 
 export const START_LOADING = "START_LOADING"
@@ -29,7 +31,7 @@ export const END_LOADING = "END_LOADING"
 // auth
 export const AUTH = "AUTH"
 export const GET_USER_DATA = "GET_USER_DATA"
-
+export const LOGOUT = "LOGOUT"
 
 // error
 export const ERROR = "ERROR"

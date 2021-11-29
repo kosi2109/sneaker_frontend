@@ -8,30 +8,17 @@ import { getUserData } from '../../actions/auth'
 
 export default function Checkout() {
     const dispatch = useDispatch()
-    var {user_id} = JSON.parse(localStorage.getItem("profile"))
-    useEffect(()=>{
-        dispatch(getUserData(user_id))
-    },[dispatch])
     
+
     const profile = useSelector((state)=> state.auth.authData)
-    
-    if(profile){
-        var initialForm = {
-            userId: profile._id,
-            name : profile.fullName,
-            address : profile.address,
-            phone : profile.phone,
-            email: profile.email
-        }
-        
-    }else{
-        var initialForm = {
-            name : "",
-            address : "",
-            phone : "",
-            email: ""
-        }
+    var initialForm = {
+        name : "",
+        address : "",
+        phone : "",
+        email: ""
     }
+      
+    
     var items = useSelector((state)=> state.orderItems)
     var order = useSelector(state => state.orders)
     const [form,setForm] = useState(initialForm)
@@ -64,7 +51,17 @@ export default function Checkout() {
             login.innerHTML = `Sending`
         }
     }
-
+    const useAsAcc = () =>{
+        var {user_id} = JSON.parse(localStorage.getItem("profile"))
+        dispatch(getUserData(user_id))
+        setForm({
+            userId: profile._id,
+            name : profile.fullName,
+            address : profile.address,
+            phone : profile.phone,
+            email: profile.email
+        })
+    }
     const handleSubmit = (e)=>{
         e.preventDefault()
         comfirmOrder()
@@ -102,7 +99,12 @@ export default function Checkout() {
                     </Link>
                     </div>
                 :
-                    ""
+                    <div className="loginCon">
+                    <p style={{width:"100%"}}>Use Address From Account .</p>
+                    
+                    <button type="button" className="login" onClick={useAsAcc}>Use</button>
+                
+                    </div>
                 }
                 
                 

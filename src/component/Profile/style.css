@@ -18,3 +18,18 @@
     width: 85%;
     height: 85%;
 }
+
+.orderContainer{
+    width: 100%;
+    padding: 1rem;
+    background-color: #fafafa;
+    margin-bottom: 1em;
+    color: #252525;
+    border-radius: 5px;
+}
+
+.profileContainer{
+    background-color: #fafafa;
+    padding: 1rem;
+    border-radius: 5px;
+}

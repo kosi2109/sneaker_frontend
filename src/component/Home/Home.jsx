@@ -51,8 +51,8 @@ export default function Home() {
                 showStatus={false}
                 showIndicators={false}
               >
-                {products.map((p) => (
-                  <div className="swiperContainer">
+                {products.map((p,i) => (
+                  <div className="swiperContainer" key={i}>
                     <div className="fimgContainer">
                       <img src={p.featureImage} alt="" />
                     </div>
@@ -67,8 +67,3 @@ export default function Home() {
     </>
   ));
 }
-
-// Home
-//             {brands.map(b=>(
-//                 <Link to={`/b/${b.brand}`}> {b.brand} </Link>
-//             ))}

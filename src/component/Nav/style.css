@@ -51,5 +51,24 @@
 
 .cartCount h6 {
   margin: 0;
+  font-size: 1rem;
   color: #fafafa;
+}
+
+@media screen and (max-wudth:480px){
+  .bag {
+    width: 30px;
+  }
+  .cartCount{
+    width: 20px;
+    height: 20px;
+  }
+  .back h5{
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+  .back img{
+    width: 20px;
+    height: 20px;
+  }
 }

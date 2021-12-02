@@ -1,35 +1,35 @@
-.pfIcon{
-    width: 45px;
-    height: 45px;
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    box-shadow: 0.5px 0.5px 5px #252525;
-    background-color: #fafafa;
-    z-index: 100;
-    border: 2px solid #252525;
+.pfIcon {
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  box-shadow: 0.5px 0.5px 5px #252525;
+  background-color: #fafafa;
+  z-index: 100;
+  border: 2px solid #252525;
 }
 
-.pfIcon img{
-    width: 85%;
-    height: 85%;
+.pfIcon img {
+  width: 85%;
+  height: 85%;
 }
 
-.orderContainer{
-    width: 100%;
-    padding: 1rem;
-    background-color: #fafafa;
-    margin-bottom: 1em;
-    color: #252525;
-    border-radius: 5px;
+.orderContainer {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fafafa;
+  margin-bottom: 1em;
+  color: #252525;
+  border-radius: 5px;
 }
 
-.profileContainer{
-    background-color: #fafafa;
-    padding: 1rem;
-    border-radius: 5px;
+.profileContainer {
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 5px;
 }

@@ -1,0 +1,21 @@
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.orderHeader h4 {
+  font-size: 1rem;
+}
+
+.orderDetail {
+  text-align: right;
+}
+
+@media screen and (max-width: 480px) {
+  .orderHeader {
+    flex-direction: column;
+  }
+  .orderDetail {
+    text-align: left;
+    width: 100%;
+  }
+}

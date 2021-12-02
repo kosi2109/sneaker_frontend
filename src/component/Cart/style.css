@@ -1,29 +1,30 @@
-.priceContainer{
-    background-color: black;
-    padding: 20px 10px;
-    color: #f7f7f7;
-    position: sticky;
-    top: 10px;
-    border-radius: 5px;
+.priceContainer {
+  background-color: black;
+  padding: 20px 10px;
+  color: #f7f7f7;
+  position: sticky;
+  top: 10px;
+  border-radius: 5px;
 }
 
-.priceDetail,.total{
-    border-top: 1px dashed #fafafa;
-    padding: 20px 0;
+.priceDetail,
+.total {
+  border-top: 1px dashed #fafafa;
+  padding: 20px 0;
 }
 
-.total{
-    padding-bottom: 0;
+.total {
+  padding-bottom: 0;
 }
 
-.checkout{
-    width: 100%;
-    height: 40px;
-    border: none;
-    outline: none;
-    margin-top: 10px;
-    background-color: #fafafa;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border-radius: 3px;
+.checkout {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  background-color: #fafafa;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 3px;
 }

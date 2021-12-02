@@ -11,7 +11,7 @@ export default (state = { brands: [], isLoading: true }, action) => {
     case END_LOADING:
       return { ...state, isLoading: false };
     case FETCH_ALL_CATE:
-      return {...state,brands:action.payload.brands};
+      return { ...state, brands: action.payload.brands };
     default:
       return state;
   }

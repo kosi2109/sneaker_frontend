@@ -13,11 +13,11 @@ export default function Home() {
     dispatch(getFeatureProducts());
   }, [dispatch]);
 
+  const { products, isLoading } = useSelector((state) => state.products);
 
-  const {products,isLoading} = useSelector((state) => state.products);
-  
-  return (
-    isLoading ? <Loading/> :(
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <Nav back={back} />
       <div className="container-fluid px-5">
@@ -28,14 +28,13 @@ export default function Home() {
                 What <br /> Are You <br /> Looking For
               </h3>
               <div>
-              <Link to="/brand" className="me-3">
-                <button>Shop Now</button>
-              </Link>
-              <Link to="/auth" >
-                <button className="loginBtn">Login</button>
-              </Link>
+                <Link to="/brand" className="me-3">
+                  <button>Shop Now</button>
+                </Link>
+                <Link to="/auth">
+                  <button className="loginBtn">Login</button>
+                </Link>
               </div>
-              
             </div>
           </div>
           <div className="col-lg-8">
@@ -51,7 +50,7 @@ export default function Home() {
                 showStatus={false}
                 showIndicators={false}
               >
-                {products.map((p,i) => (
+                {products.map((p, i) => (
                   <div className="swiperContainer" key={i}>
                     <div className="fimgContainer">
                       <img src={p.featureImage} alt="" />
@@ -65,5 +64,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  ));
+  );
 }

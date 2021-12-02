@@ -1,76 +1,74 @@
-.itemContainer{
-    background-color: rgb(243, 243, 243);
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0;
+.itemContainer {
+  background-color: rgb(243, 243, 243);
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0;
 }
 
-.cartImg{
-    height: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.cartImg {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cartImg img{
-    width: auto;
-    max-height: 100%;
+.cartImg img {
+  width: auto;
+  max-height: 100%;
 }
 
-.detailContainer{
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    flex-direction: column;
-
+.detailContainer {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
 }
-.detailContainer h4{
-    font-size: 1.5rem;
-}
-
-.option h5{
-    font-size: 1rem;
-    font-weight: 500;
-    color: #3f3f3f;
-    text-transform: capitalize;
+.detailContainer h4 {
+  font-size: 1.5rem;
 }
 
-.detailConstant{
-    font-weight: 700;
-    color: #252525;
+.option h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3f3f3f;
+  text-transform: capitalize;
 }
 
-.cContainer{
-    display: flex;
+.detailConstant {
+  font-weight: 700;
+  color: #252525;
 }
 
-.cContainer div{
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    margin-right: 10px;
-    background-color: inherit;
-    color: #252525;
-    font-weight: 900;
-    outline: none;
-    border: 2px solid #252525;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
+.cContainer {
+  display: flex;
 }
 
-.cContainer div h6{
-    margin: 0;
+.cContainer div {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: inherit;
+  color: #252525;
+  font-weight: 900;
+  outline: none;
+  border: 2px solid #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
 }
 
-.cContainer div:hover{
-    background-color: #252525;
-    color: #fafafa;
+.cContainer div h6 {
+  margin: 0;
+}
+
+.cContainer div:hover {
+  background-color: #252525;
+  color: #fafafa;
 }

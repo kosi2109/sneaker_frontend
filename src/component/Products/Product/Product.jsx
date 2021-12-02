@@ -43,6 +43,26 @@ export default function Product({ product }) {
     }
   };
 
+  const activeColor = (c, index) => {
+    if (index === size) {
+      return (
+        <div
+          onClick={() => setColor(index)}
+          style={{ backgroundColor: "" + c.color.hex }}
+          className="colorIcon active"
+        ></div>
+      );
+    } else {
+      return (
+        <div
+          onClick={() => setColor(index)}
+          style={{ backgroundColor: "" + c.color.hex }}
+          className="colorIcon"
+        ></div>
+      );
+    }
+  };
+
   const checkStock = () => {
     if (product.option[color].stock[size].stock === 0) {
       return false;
@@ -92,11 +112,7 @@ export default function Product({ product }) {
           <h4>Color</h4>
           <div className="colorContainer">
             {product.option.map((c, index) => (
-              <div
-                onClick={() => setColor(index)}
-                style={{ backgroundColor: "" + c.color.hex }}
-                className="colorIcon"
-              ></div>
+              activeColor(c,index)
             ))}
           </div>
         </div>

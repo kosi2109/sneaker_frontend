@@ -32,6 +32,11 @@
   height: 40px;
   border-radius: 100%;
   cursor: pointer;
+  opacity: 0.8;
+}
+
+.colorIcon.active{
+  opacity: 1;
 }
 
 .sizeIcon {

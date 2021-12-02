@@ -44,7 +44,7 @@ export default function Product({ product }) {
   };
 
   const activeColor = (c, index) => {
-    if (index === size) {
+    if (index === color) {
       return (
         <div
           onClick={() => setColor(index)}

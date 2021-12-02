@@ -23,7 +23,7 @@ export default function Nav({ back, uri }) {
   const history = useNavigate();
 
   return (
-    <div className="nav px-5">
+    <div className="nav px-2 px-md-5">
       <h2 className="logo m-0">
         {" "}
         <Link to="/">kalli</Link>{" "}

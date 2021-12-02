@@ -24,7 +24,7 @@ export default function Nav({ back, uri }) {
 
   return (
     <div className="nav px-5">
-      <h2 className="logo">
+      <h2 className="logo m-0">
         {" "}
         <Link to="/">kalli</Link>{" "}
       </h2>
@@ -34,7 +34,6 @@ export default function Nav({ back, uri }) {
           onClick={() => history(`/${uri}`, { replace: true })}
         >
           <img src={Back} alt="" />
-          <h5>Back</h5>
         </div>
       ) : (
         ""

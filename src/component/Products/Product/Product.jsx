@@ -66,6 +66,7 @@ export default function Product({ product }) {
           animationHandler="fade"
           thumbWidth={50}
           showStatus={false}
+          swipeable={false}
         >
           {product.option[color].images.map((im) => (
             <div>

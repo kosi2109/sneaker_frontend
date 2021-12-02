@@ -31,6 +31,7 @@ export default function Products() {
             showStatus={false}
             showIndicators={false}
             className="item-container mt-5"
+            swipeable={false}
           >
             {products.map((product, i) => (
               <Product product={product} key={i} />

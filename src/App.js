@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Products from "./component/Products/Products";
 import Brands from "./component/Brands/Brands";
 import {

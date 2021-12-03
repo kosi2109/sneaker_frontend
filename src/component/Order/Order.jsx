@@ -15,7 +15,7 @@ export default function Order() {
   }, [dispatch]);
 
   const { order, isLoading } = useSelector((state) => state.order);
-  console.log(order);
+  
   return (
     <>
       <Nav back={true} uri={"profile"} />

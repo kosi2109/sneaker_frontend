@@ -34,7 +34,7 @@ export default function Order() {
                     <h4>{order.address}</h4>
                   </div>
                   <div className="orderDetail">
-                    <h4>OrderID({order._id})</h4>
+                    <h4>OrderID({id})</h4>
                     <h4>{moment(order.order_date).format("MMM Do YY")}</h4>
                     <h4>Status : {order.status}</h4>
                     <h4>Total : {order.total}</h4>

@@ -66,12 +66,13 @@ export default function Checkout() {
   };
   buttonCheck();
   var pf = useSelector((state) => state.auth.authData);
-  useEffect(() => {
+  if (localStorage.getItem("profile") != null){
     var { user_id } = JSON.parse(localStorage.getItem("profile"));
-    dispatch(getUserData(user_id));
-  }, [dispatch]);
+      dispatch(getUserData(user_id));
+  }
   const useAsAcc = () => {
     if (pf != null) {
+      
       setForm({
         userId: pf._id,
         name: pf.fullName,

@@ -47,12 +47,12 @@ export default function Profile() {
               <div>
                 {orders.map((order, i) => (
                   <Link
-                    to={`/order/${order.order_id}`}
+                    to={`/order/${order._id}`}
                     key={i}
                     style={{ textDecoration: "none" }}
                   >
                     <div className="orderContainer">
-                      <h4>Order ID {order.order_id}</h4>
+                      <h4>Order ID {order._id}</h4>
                       <div>
                         <h5>Total : ${order.total}</h5>
                         <h5>

@@ -74,7 +74,7 @@ export default function Product({ product }) {
     <div className="row item-container p-2">
       <div className="col-lg-1"></div>
       <div className="col-lg-3">
-        <h2 className="text-start mb-4">{product.brand.brand}</h2>
+        <h1 className="text-start mb-4">__{product.brand.brand}</h1>
         <h2 className="text-start mb-4" id={`${product._id}_name`}>
           {product.name}
         </h2>
